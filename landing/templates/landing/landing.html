@@ -5,21 +5,16 @@
         </head>
         <body>
             <div>
-                <img src="https://pp.userapi.com/c637716/v637716487/15889/nr7rbM2UBC4.jpg">
                 <h1><a href="https://vk.com/nikmaikl">Django Blog for introducing to Michael</a></h1>
             </div>
 
-            <div>
-                <p>published: 26.06.2017, 2:28AM</p>
-                <h2><a href="https://www.youtube.com/watch?v=bHftqc2wFGY">Try to be careful with your decisions...</a></h2>
-                <p>some text here</p>
-            </div>
-
-            <div>
-                <p>published: 26.06.2017, 2:28AM</p>
-                <h2><a href="https://vk.com/id304848487">Me.</a></h2>
-                <p>python :)</p>
-            </div>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
         </body>
     </html>
 
